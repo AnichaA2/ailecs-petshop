@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!-- I declare this as an HTML5 document -->
+
+<html lang="en">
+<!-- I set the page language to English -->
+
+<head>
+    <!-- Head section where I put my page setup -->
+    
+    <meta charset="UTF-8">
+    <!-- I use UTF-8 to support all characters -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- I added this to make the page responsive on mobile devices -->
+    
+    <title>Services - Ailec's PetShop</title>
+    <!-- This is what shows in the browser tab -->
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- I link my CSS file to style the page -->
+</head>
+
+<body>
+    <!-- Body contains all the visible content -->
+    
+    <header>
+        <!-- I created the header for navigation -->
+        
+        <nav class="container">
+            <!-- Navigation with container class to center it -->
+            
+            <div class="logo">
+                <!-- This div holds my logo -->
+                
+                <span style="font-size: 2rem;">🐾</span>
+                <!-- I made the paw emoji larger using inline CSS -->
+                
+                <div style="display: flex; flex-direction: column; line-height: 1;">
+                    <!-- I use flexbox to stack the text vertically -->
+                    <!-- flex-direction: column makes items go top to bottom -->
+                    <!-- line-height: 1 removes extra spacing -->
+                    
+                    <span style="font-size: 1.8rem; font-weight: bold; letter-spacing: 2px;">AILEC'S</span>
+                    <!-- I styled the shop name big and bold with letter spacing -->
+                    
+                    <span style="font-size: 1rem; font-weight: normal; letter-spacing: 3px;">PetShop</span>
+                    <!-- Subtitle with more letter spacing -->
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <!-- I created an unordered list for my navigation menu -->
+                
+                <li><a href="index.html">Home</a></li>
+                <!-- Link to home page -->
+                
+                <li><a href="about.html">About</a></li>
+                <!-- Link to about page -->
+                
+                <li><a href="products.html">Products</a></li>
+                <!-- Link to products page -->
+                
+                <li><a href="services.html">Services</a></li>
+                <!-- This is the current page -->
+                
+                <li><a href="contact.html">Contact</a></li>
+                <!-- Link to contact page -->
+            </ul>
+            
+            <div style="color: white; font-size: 1.2rem;">
+                <!-- I created this div for the shopping cart -->
+                <!-- I made it white and slightly larger -->
+                
+                <a href="cart.html" style="color: white; text-decoration: none;">
+                    <!-- I link to cart page and remove the underline -->
+                    
+                    🛒 <span id="cartCount">(0)</span>
+                    <!-- Cart icon with counter -->
+                    <!-- ID allows JavaScript to update this number -->
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <!-- I created this section for the page title banner -->
+        
+        <div class="container">
+            <!-- Container to center the content -->
+            
+            <h1>Our Services</h1>
+            <!-- Main heading for the services page -->
+            
+            <p>Professional care for your pets</p>
+            <!-- Subtitle describing what we offer -->
+        </div>
+    </section>
+
+    <section class="services">
+        <!-- This section contains all the service cards -->
+        
+        <div class="container">
+            <!-- Container to keep everything centered -->
+            
+            <div class="services-grid">
+                <!-- I use services-grid class to display services in a grid -->
+                
+                <!-- FIRST SERVICE: Bath & Hygiene -->
+                <div class="service-card">
+                    <!-- Each service is in its own card -->
+                    
+                    <div class="service-icon">🛁</div>
+                    <!-- I added a bath emoji as the icon -->
+                    <!-- The service-icon class makes it bigger -->
+                    
+                    <h3>Bath & Hygiene</h3>
+                    <!-- Service name -->
+                    
+                    <p>Complete bath, nail trimming, and ear cleaning</p>
+                    <!-- Description of what this service includes -->
+                    
+                    <p class="service-price">From €20</p>
+                    <!-- Starting price with service-price class for green styling -->
+                    
+                    <p style="color: #666;">Duration: 1-2 hours</p>
+                    <!-- I added duration info in grey color -->
+                    
+                    <button class="btn" onclick="window.location.href='contact.html'">Book Now</button>
+                    <!-- I created a button that redirects to contact page when clicked -->
+                    <!-- window.location.href changes the page URL -->
+                </div>
+
+                <!-- SECOND SERVICE: Grooming & Haircut -->
+                <div class="service-card">
+                    <!-- Second service card with same structure -->
+                    
+                    <div class="service-icon">✂️</div>
+                    <!-- Scissors emoji for grooming -->
+                    
+                    <h3>Grooming & Haircut</h3>
+                    <!-- Service name -->
+                    
+                    <p>Professional grooming and breed-specific cuts</p>
+                    <!-- Description of grooming service -->
+                    
+                    <p class="service-price">From €30</p>
+                    <!-- Price starting at 30 euros -->
+                    
+                    <p style="color: #666;">Duration: 2-3 hours</p>
+                    <!-- Duration information -->
+                    
+                    <button class="btn" onclick="window.location.href='contact.html'">Book Now</button>
+                    <!-- Button redirects to contact form for booking -->
+                </div>
+
+                <!-- THIRD SERVICE: Veterinary Consultation -->
+                <div class="service-card">
+                    <!-- Third service card -->
+                    
+                    <div class="service-icon">🏥</div>
+                    <!-- Hospital emoji for veterinary services -->
+                    
+                    <h3>Veterinary Consultation</h3>
+                    <!-- Service name -->
+                    
+                    <p>Health checkups and medical advice</p>
+                    <!-- Description of vet services -->
+                    
+                    <p class="service-price">From €40</p>
+                    <!-- Starting price -->
+                    
+                    <p style="color: #666;">Duration: 30-45 minutes</p>
+                    <!-- How long the consultation takes -->
+                    
+                    <button class="btn" onclick="window.location.href='contact.html'">Book Now</button>
+                    <!-- Button to book this service -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Footer at the bottom of the page -->
+        
+        <div class="container">
+            <!-- Container to center footer content -->
+            
+            <p>&copy; 2026 Ailec's PetShop | Phone: +351 123 456 789</p>
+            <!-- Copyright and phone number -->
+            
+            <p>Email: info@ailecsPetShop.com | Location: Barcelona</p>
+            <!-- Email and location information -->
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to update the shopping cart counter
+        
+        // I created this function to show how many items are in the cart
+        function updateCartCount() {
+            // This function reads from local storage
+            
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            // I get the cart data from local storage
+            // localStorage.getItem retrieves saved data with key 'cart'
+            // JSON.parse converts text back to array
+            // || [] gives empty array if nothing is saved
+            
+            const el = document.getElementById('cartCount');
+            // I find the cart counter element by its ID
+            
+            if(el) el.textContent = '(' + cart.length + ')';
+            // If element exists, I update its text
+            // cart.length counts how many items are in the cart
+            // I format it with parentheses like "(3)"
+        }
+        
+        // I call this function when the page loads to display current cart count
+        updateCartCount();
+    </script>
+</body>
+<!-- Closing body tag -->
+
+</html>
+<!-- Closing HTML tag -->

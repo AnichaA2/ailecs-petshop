@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!-- I declare this as HTML5 -->
+
+<html lang="en">
+<!-- I set the language to English -->
+
+<head>
+    <!-- Head section for page setup -->
+    
+    <meta charset="UTF-8">
+    <!-- I use UTF-8 encoding -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- I make the page responsive -->
+    
+    <title>Contact - Ailec's Store</title>
+    <!-- Browser tab title -->
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- I link my CSS file -->
+</head>
+
+<body>
+    <!-- Body contains all visible content -->
+    
+    <header>
+        <!-- Header for navigation -->
+        
+        <nav class="container">
+            <!-- Navigation with container class -->
+            
+            <div class="logo">
+                <!-- Logo section -->
+                
+                <span style="font-size: 2rem;">🐾</span>
+                <!-- I made the paw emoji bigger -->
+                
+                <div style="display: flex; flex-direction: column; line-height: 1;">
+                    <!-- I use flexbox to stack text vertically -->
+                    
+                    <span style="font-size: 1.8rem; font-weight: bold; letter-spacing: 2px;">AILEC'S</span>
+                    <!-- Shop name in large bold text -->
+                    
+                    <span style="font-size: 1rem; font-weight: normal; letter-spacing: 3px;">PETSHOP</span>
+                    <!-- Subtitle with spacing -->
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <!-- Navigation menu list -->
+                
+                <li><a href="index.html">Home</a></li>
+                <!-- Link to home -->
+                
+                <li><a href="about.html">About</a></li>
+                <!-- Link to about -->
+                
+                <li><a href="products.html">Products</a></li>
+                <!-- Link to products -->
+                
+                <li><a href="services.html">Services</a></li>
+                <!-- Link to services -->
+                
+                <li><a href="contact.html">Contact</a></li>
+                <!-- Link to contact (current page) -->
+            </ul>
+            
+            <div style="color: white; font-size: 1.2rem;">
+                <!-- Cart icon section -->
+                
+                <a href="cart.html" style="color: white; text-decoration: none;">
+                    <!-- Link to cart without underline -->
+                    
+                    🛒 <span id="cartCount">(0)</span>
+                    <!-- Cart emoji with counter -->
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <!-- Page title banner -->
+        
+        <div class="container">
+            <!-- Container to center content -->
+            
+            <h1>Contact Us</h1>
+            <!-- Main heading -->
+            
+            <p>We'd love to hear from you!</p>
+            <!-- Friendly subtitle -->
+        </div>
+    </section>
+
+    <section class="contact">
+        <!-- Main contact section -->
+        
+        <div class="container">
+            <!-- Container for centering -->
+            
+            <form class="contact-form" id="contactForm">
+                <!-- I created a form with ID so JavaScript can find it -->
+                
+                <div class="form-group">
+                    <!-- Group for name field -->
+                    
+                    <label for="name">Your Name:</label>
+                    <!-- Label tells user what to enter -->
+                    <!-- for="name" connects label to input -->
+                    
+                    <input type="text" id="name" name="name" required>
+                    <!-- Input field for name -->
+                    <!-- type="text" accepts any text -->
+                    <!-- id="name" identifies this field -->
+                    <!-- required makes it mandatory -->
+                </div>
+
+                <div class="form-group">
+                    <!-- Group for email field -->
+                    
+                    <label for="email">Your Email:</label>
+                    <!-- Label for email -->
+                    
+                    <input type="email" id="email" name="email" required>
+                    <!-- Input for email -->
+                    <!-- type="email" validates email format -->
+                    <!-- required makes it mandatory -->
+                </div>
+
+                <div class="form-group">
+                    <!-- Group for subject field -->
+                    
+                    <label for="subject">Subject:</label>
+                    <!-- Label for subject -->
+                    
+                    <input type="text" id="subject" name="subject" required>
+                    <!-- Input for subject line -->
+                </div>
+
+                <div class="form-group">
+                    <!-- Group for message field -->
+                    
+                    <label for="message">Message:</label>
+                    <!-- Label for message -->
+                    
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                    <!-- Textarea for longer messages -->
+                    <!-- rows="6" makes it 6 lines tall -->
+                </div>
+
+                <button type="submit" class="btn">Send Message</button>
+                <!-- Submit button to send the form -->
+                <!-- type="submit" triggers form submission -->
+            </form>
+
+            <div class="success-message" id="successMsg">
+                <!-- I created this div to show success message -->
+                <!-- Hidden by default, JavaScript will show it -->
+                
+                ✅ Message sent successfully!
+                <!-- Success message with checkmark -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Footer at bottom -->
+        
+        <div class="container">
+            <!-- Container for centering -->
+            
+            <p>&copy; 2026 Ailec's PetShop | Phone: +351 123 456 789</p>
+            <!-- Copyright and phone -->
+            
+            <p>Email: info@AilecsPetShop.com | Location: Barcelona</p>
+            <!-- Email and location -->
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for contact form functionality
+        
+        // I find the form by its ID and add an event listener
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            // This function runs when someone clicks "Send Message"
+            
+            e.preventDefault();
+            // I prevent the form from actually submitting (page wouldn't reload)
+            
+            document.getElementById('successMsg').style.display = 'block';
+            // I make the success message visible
+            // style.display = 'block' shows the hidden element
+            
+            this.reset();
+            // I clear all form fields
+            // this refers to the form element
+            
+            setTimeout(function() {
+                // I use setTimeout to wait 3 seconds
+                
+                document.getElementById('successMsg').style.display = 'none';
+                // After 3 seconds, I hide the success message again
+            }, 3000);
+            // 3000 milliseconds = 3 seconds
+        });
+    </script>
+
+    <script>
+        // JavaScript for cart counter
+        
+        // I created this function to update cart count
+        function updateCartCount() {
+            // Function to display cart items
+            
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            // I get cart data from local storage
+            // JSON.parse converts text to array
+            // || [] uses empty array if nothing saved
+            
+            const el = document.getElementById('cartCount');
+            // I find the counter element
+            
+            if(el) el.textContent = '(' + cart.length + ')';
+            // If element exists, I update the number
+            // cart.length counts items
+        }
+        
+        // I call the function when page loads
+        updateCartCount();
+    </script>
+</body>
+<!-- Closing body tag -->
+
+</html>
+<!-- Closing HTML tag -->

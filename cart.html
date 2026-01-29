@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!-- I declare this as HTML5 -->
+
+<html lang="en">
+<!-- I set the language to English -->
+
+<head>
+    <!-- Head section for page setup -->
+    
+    <meta charset="UTF-8">
+    <!-- I use UTF-8 encoding -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- I make the page responsive -->
+    
+    <title>Cart - Ailec's PetShop</title>
+    <!-- Browser tab title -->
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- I link my CSS file -->
+</head>
+
+<body>
+    <!-- Body contains all visible content -->
+    
+    <header>
+        <!-- Header for navigation -->
+        
+        <nav class="container">
+            <!-- Navigation with container class -->
+            
+            <div class="logo">
+                <!-- Logo section -->
+                
+                <span style="font-size: 2rem;">🐾</span>
+                <!-- I made the paw emoji bigger -->
+                
+                <div style="display: flex; flex-direction: column; line-height: 1;">
+                    <!-- I use flexbox to stack text vertically -->
+                    <!-- flex-direction: column makes items go top to bottom -->
+                    <!-- line-height: 1 removes extra spacing -->
+                    
+                    <span style="font-size: 1.8rem; font-weight: bold; letter-spacing: 2px;">AILEC'S</span>
+                    <!-- Shop name in large bold text with letter spacing -->
+                    
+                    <span style="font-size: 1rem; font-weight: normal; letter-spacing: 3px;">PETSHOP</span>
+                    <!-- Subtitle with more letter spacing -->
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <!-- Navigation menu list -->
+                
+                <li><a href="index.html">Home</a></li>
+                <!-- Link to home page -->
+                
+                <li><a href="products.html">Products</a></li>
+                <!-- Link to products -->
+                
+                <li><a href="services.html">Services</a></li>
+                <!-- Link to services -->
+                
+                <li><a href="about.html">About</a></li>
+                <!-- Link to about -->
+                
+                <li><a href="contact.html">Contact</a></li>
+                <!-- Link to contact -->
+            </ul>
+            
+            <div style="color: white; font-size: 1.2rem;">
+                <!-- Cart icon section -->
+                <!-- I made it white and slightly bigger -->
+                
+                <a href="cart.html" style="color: white; text-decoration: none;">
+                    <!-- Link to cart page (current page) without underline -->
+                    
+                    🛒 <span id="cartCount">(0)</span>
+                    <!-- Cart emoji with counter that JavaScript updates -->
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <!-- Page title banner -->
+        
+        <h1>Shopping Cart</h1>
+        <!-- Main heading for cart page -->
+    </section>
+
+    <section style="padding: 40px 20px;">
+        <!-- Main cart section with padding on all sides -->
+        
+        <div style="max-width: 700px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px;">
+            <!-- Container for cart content -->
+            <!-- max-width: 700px limits the width -->
+            <!-- margin: 0 auto centers the div -->
+            <!-- background: white gives white background -->
+            <!-- padding: 30px adds space inside -->
+            <!-- border-radius: 10px creates rounded corners -->
+            
+            <div id="cartItems"></div>
+            <!-- Empty div that JavaScript will fill with cart items -->
+            <!-- ID allows JavaScript to find this element -->
+            
+            <button class="btn" onclick="localStorage.clear(); location.reload();" style="margin-top: 20px;">Clear Cart</button>
+            <!-- I created a button to clear the cart -->
+            <!-- onclick runs JavaScript when clicked -->
+            <!-- localStorage.clear() deletes all saved data -->
+            <!-- location.reload() refreshes the page -->
+            <!-- margin-top: 20px adds space above button -->
+        </div>
+    </section>
+
+    <footer>
+        <!-- Footer at bottom of page -->
+        
+        <div class="container">
+            <!-- Container for centering -->
+            
+            <p>&copy; 2026 Ailec's PetShop | Phone: +34 236 345 234</p>
+            <!-- Copyright and phone number -->
+            
+            <p>Email: info@ailecspetshop.com | Location: Barcelona</p>
+            <!-- Email and location -->
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to display cart items
+        
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        // I get the cart data from local storage
+        // localStorage.getItem('cart') retrieves saved data with key 'cart'
+        // JSON.parse() converts text string back to JavaScript array
+        // || [] means if no data exists, use empty array
+        
+        let html = '<h2>Items: ' + cart.length + '</h2><hr style="margin: 20px 0;">';
+        // I start building HTML to display
+        // let html creates a variable to store HTML text
+        // cart.length shows number of items
+        // <hr> creates a horizontal line with margin
+        
+        let total = 0;
+        // I create a variable to calculate total price
+        // Starting at 0, I'll add each product price to this
+        
+        cart.forEach(item => {
+            // I loop through each item in the cart array
+            // forEach runs this code for every item
+            
+            total += parseFloat(item.price);
+            // I add the item's price to the total
+            // parseFloat() converts text to number
+            // += means add to existing value
+            
+            html += '<div style="padding: 15px; border-bottom: 1px solid #eee;"><strong>' + item.name + '</strong><br>€' + item.price + '</div>';
+            // I add HTML for this item
+            // += adds to existing html variable
+            // I create a div with padding and border
+            // <strong> makes product name bold
+            // <br> creates line break
+            // I show the price in euros
+        });
+        
+        html += '<h3 style="margin-top: 20px; text-align: right;">Total: €' + total.toFixed(2) + '</h3>';
+        // I add the total price at the end
+        // text-align: right aligns text to the right
+        // total.toFixed(2) formats number to 2 decimal places
+        
+        document.getElementById('cartItems').innerHTML = html || '<p>Cart is empty</p>';
+        // I put all the HTML I built into the cartItems div
+        // .innerHTML replaces the div's content
+        // || '<p>Cart is empty</p>' shows this if cart has no items
+        
+        document.getElementById('cartCount').textContent = '(' + cart.length + ')';
+        // I update the cart counter in the header
+        // .textContent changes the text inside the span
+        // cart.length gives the number of items
+    </script>
+</body>
+<!-- Closing body tag -->
+
+</html>
+<!-- Closing HTML tag -->

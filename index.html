@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!-- Declares this is an HTML5 document -->
+
+<html lang="en">
+<!-- Opening HTML tag with language set to English -->
+
+<head>
+    <!-- Head section contains metadata and links -->
+    
+    <meta charset="UTF-8">
+    <!-- Sets character encoding to UTF-8 for special characters -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes website responsive on mobile devices by setting viewport width -->
+    
+    <title>Ailec's PetShop - Home</title>
+    <!-- Sets the browser tab title -->
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- Links external CSS file for styling the page -->
+</head>
+
+<body>
+    <!-- Body section contains all visible content -->
+    
+    <header>
+        <!-- Header element for top section of page -->
+        
+        <nav class="container">
+            <!-- Navigation element with container class for centering -->
+            
+            <div class="logo">
+                <!-- Div container for the logo -->
+                
+                <span style="font-size: 2rem;">🐾</span>
+                <!-- Span with inline CSS to make paw emoji bigger (2rem = 2x root font size) -->
+                
+                <div style="display: flex; flex-direction: column; line-height: 1;">
+                    <!-- Div using flexbox to stack text vertically with no line spacing -->
+                    
+                    <span style="font-size: 1.8rem; font-weight: bold; letter-spacing: 2px;">AILEC'S</span>
+                    <!-- Span for shop name with large font, bold weight, and 2px letter spacing -->
+                    
+                    <span style="font-size: 1rem; font-weight: normal; letter-spacing: 3px;">PETSHOP</span>
+                    <!-- Span for subtitle with normal size and 3px letter spacing -->
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <!-- Unordered list for navigation menu with nav-links class -->
+                
+                <li><a href="index.html">Home</a></li>
+                <!-- List item with anchor tag linking to home page -->
+                
+                <li><a href="about.html">About</a></li>
+                <!-- List item linking to about page -->
+                
+                <li><a href="products.html">Products</a></li>
+                <!-- List item linking to products page -->
+                
+                <li><a href="services.html">Services</a></li>
+                <!-- List item linking to services page -->
+                
+                <li><a href="contact.html">Contact</a></li>
+                <!-- List item linking to contact page -->
+            </ul>
+            
+            <div style="color: white; font-size: 1.2rem;">
+                <!-- Div for cart icon with white text color and 1.2rem font size -->
+                
+                <a href="cart.html" style="color: white; text-decoration: none;">
+                    <!-- Anchor tag to cart page with white color and no underline -->
+                    
+                    🛒 <span id="cartCount">(0)</span>
+                    <!-- Cart emoji with span element that has ID for JavaScript to update -->
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <!-- Section element with hero class for welcome banner -->
+        
+        <div class="container">
+            <!-- Container div to center content -->
+            
+            <h1>Welcome to Ailec's PetShop</h1>
+            <!-- H1 heading tag for main page title -->
+            
+            <p>Your pet's happiness is our priority</p>
+            <!-- Paragraph tag for tagline -->
+        </div>
+    </section>
+
+    <div style="display: flex; gap: 20px; justify-content: center; margin: 40px 0; flex-wrap: wrap;">
+        <!-- Div using flexbox to display images in a row with 20px gap, centered horizontally -->
+        <!-- margin: 40px 0 adds space above and below -->
+        <!-- flex-wrap: wrap makes images stack on small screens (responsive) -->
+        
+        <img src="images/Ailec2.jpeg" alt="Happy pet" style="width: 200px; height: 200px; object-fit: cover; border-radius: 15px;">
+        <!-- Image tag with src pointing to image file -->
+        <!-- alt provides alternative text for accessibility -->
+        <!-- width and height set to 200px for square shape -->
+        <!-- object-fit: cover crops image to fit without distortion -->
+        <!-- border-radius: 15px creates rounded corners -->
+        
+        <img src="images/download (2).jpg" alt="Happy pet" style="width: 200px; height: 200px; object-fit: cover; border-radius: 15px;">
+        <!-- Second image with same styling -->
+        
+        <img src="images/download (3).jpg" alt="Happy pet" style="width: 200px; height: 200px; object-fit: cover; border-radius: 15px;">
+        <!-- Third image with same styling -->
+        
+        <img src="images/Instagram.jpg" alt="Happy pet" style="width: 200px; height: 200px; object-fit: cover; border-radius: 15px;">
+        <!-- Fourth image with same styling -->
+    </div>
+
+    <section style="background-color: #eb9898; padding: 30px; margin: 40px auto; max-width: 700px; border-radius: 15px; text-align: center;">
+        <!-- Section with inline CSS: pink background, 30px padding all sides -->
+        <!-- margin: 40px auto centers the section with 40px top/bottom spacing -->
+        <!-- max-width: 700px limits section width -->
+        <!-- border-radius: 15px creates rounded corners -->
+        <!-- text-align: center centers all text inside -->
+        
+        <h2 style="color: #ffffff;">Pet Fact Of The Day</h2>
+        <!-- H2 heading with white color (#ffffff is hexadecimal for white) -->
+        
+        <p id="dogFact" style="font-size: 18px; margin-top: 15px;">Loading...</p>
+        <!-- Paragraph with ID "dogFact" so JavaScript can update it -->
+        <!-- font-size: 18px makes text slightly larger -->
+        <!-- margin-top: 15px adds space above -->
+        <!-- "Loading..." is placeholder text until API loads -->
+    </section>
+
+    <section class="features">
+        <!-- Section with features class for styling from CSS file -->
+        
+        <div class="container">
+            <!-- Container div for centering content -->
+            
+            <h2>Why Choose Us</h2>
+            <!-- H2 heading for section title -->
+            
+            <div class="features-grid">
+                <!-- Div with features-grid class creates grid layout from CSS -->
+                
+                <div class="feature-box">
+                    <!-- Div with feature-box class for individual feature card -->
+                    
+                    <div class="feature-icon">🛍️</div>
+                    <!-- Div with feature-icon class for emoji, makes it larger via CSS -->
+                    
+                    <h3>Premium Products</h3>
+                    <!-- H3 heading for feature title -->
+                    
+                    <p>High quality pet supplies</p>
+                    <!-- Paragraph describing the feature -->
+                </div>
+                
+                <div class="feature-box">
+                    <!-- Second feature box -->
+                    
+                    <div class="feature-icon">✂️</div>
+                    <!-- Scissors emoji for grooming services -->
+                    
+                    <h3>Expert Services</h3>
+                    <!-- Feature title -->
+                    
+                    <p>Professional pet care</p>
+                    <!-- Feature description -->
+                </div>
+                
+                <div class="feature-box">
+                    <!-- Third feature box -->
+                    
+                    <div class="feature-icon">😊</div>
+                    <!-- Smiley emoji for customer satisfaction -->
+                    
+                    <h3>Happy Customers</h3>
+                    <!-- Feature title -->
+                    
+                    <p>Trusted by 1000+ pet owners</p>
+                    <!-- Feature description -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Footer element for bottom section of page -->
+        
+        <div class="container">
+            <!-- Container div for centering footer content -->
+            
+            <p>&copy; 2026 Ailec's PetShop | Phone: +351 123 456 789</p>
+            <!-- Paragraph with copyright symbol (&copy; is HTML entity) and contact info -->
+            
+            <p>Email: info@ailecspetshop.com | Location: Barcelona</p>
+            <!-- Paragraph with email and location -->
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript code starts here
+        
+        fetch('https://dogapi.dog/api/v2/facts')
+            // fetch() function makes HTTP request to Dog API to get data
+            
+            .then(r => r.json())
+            // .then() waits for response, r.json() converts response to JSON format
+            
+            .then(d => {
+                // Second .then() receives the JSON data as 'd'
+                
+                document.getElementById('dogFact').textContent = d.data[0].attributes.body;
+                // document.getElementById finds the paragraph with ID "dogFact"
+                // .textContent replaces the text inside it
+                // d.data[0].attributes.body navigates through JSON to get the fact text
+            });
+    </script>
+
+    <script>
+        // Second script for shopping cart functionality
+        
+        function updateCartCount() {
+            // Defines a function named updateCartCount
+            
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            // Creates constant 'cart' variable
+            // localStorage.getItem('cart') gets saved cart data from browser storage
+            // JSON.parse() converts text data back to JavaScript array
+            // || [] means "or use empty array" if nothing is saved
+            
+            const el = document.getElementById('cartCount');
+            // Creates constant 'el' that finds the span element with ID "cartCount"
+            
+            if(el) el.textContent = '(' + cart.length + ')';
+            // if(el) checks element exists
+            // el.textContent updates the text
+            // cart.length counts items in array
+            // '(' + cart.length + ')' creates text like "(3)"
+        }
+        
+        updateCartCount();
+        // Calls the function to run when page loads
+    </script>
+</body>
+<!-- Closing body tag -->
+
+</html>
+<!-- Closing HTML tag -->
