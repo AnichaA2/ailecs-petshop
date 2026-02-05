@@ -1,154 +1,81 @@
 <!DOCTYPE html>
-<!-- I declare this as HTML5 -->
-
 <html lang="en">
-<!-- I set the language to English -->
-
 <head>
-    <!-- Head section for page setup -->
-    
     <meta charset="UTF-8">
-    <!-- I use UTF-8 for character encoding -->
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- I make the page responsive for mobile devices -->
-    
     <title>About Us - Ailec's Store</title>
-    <!-- This shows in the browser tab -->
-    
     <link rel="stylesheet" href="style.css">
-    <!-- I link my external CSS file -->
 </head>
-
 <body>
-    <!-- Body contains all visible content -->
-    
+    <!-- Header with navigation -->
     <header>
-        <!-- Header for the top navigation -->
-        
         <nav class="container">
-            <!-- Navigation with container class -->
-            
+            <!-- Logo -->
             <div class="logo">
-                <!-- Logo section -->
-                
                 <span style="font-size: 2rem;">🐾</span>
-                <!-- I made the paw emoji bigger -->
-                
                 <div style="display: flex; flex-direction: column; line-height: 1;">
-                    <!-- I use flexbox to stack text vertically -->
-                    
                     <span style="font-size: 1.8rem; font-weight: bold; letter-spacing: 2px;">AILEC'S</span>
-                    <!-- Shop name styled large and bold -->
-                    
                     <span style="font-size: 1rem; font-weight: normal; letter-spacing: 3px;">PETSHOP</span>
-                    <!-- Subtitle with letter spacing -->
                 </div>
             </div>
             
+            <!-- Navigation menu -->
             <ul class="nav-links">
-                <!-- Unordered list for navigation menu -->
-                
                 <li><a href="index.html">Home</a></li>
-                <!-- Link to home page -->
                 <li><a href="about.html">About</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             
+            <!-- Shopping cart -->
             <div style="color: white; font-size: 1.2rem;">
-                <!-- Cart icon div -->
-                
                 <a href="cart.html" style="color: white; text-decoration: none;">
-                    
                     🛒 <span id="cartCount">(0)</span>
-                    <!-- Cart emoji with counter that JavaScript updates -->
                 </a>
             </div>
         </nav>
     </header>
 
+    <!-- Page header -->
     <section class="page-header">
-        <!-- Page title banner section -->
-        
         <div class="container">
-            <!-- Container to center content -->
-            
             <h1>About Us</h1>
-            <!-- Main page heading -->
-            
             <p>Learn more about our story</p>
-            <!-- Subtitle -->
         </div>
     </section>
 
+    <!-- About section -->
     <section class="about">
-        <!-- Main about section -->
-        
         <div class="container">
-            <!-- Container for centering -->
-            
             <div class="about-content">
-                <!-- Div to hold image and text side by side -->
-                
+                <!-- Company image -->
                 <div class="about-image">
-                    <!-- Div for the image -->
-                    
                     <div class="placeholder-image">
-                        <!-- Wrapper for the image -->
-                        
                         <img src="Images/When Tiny Paws Touch 🐾💕.jpg" alt="AilecsPetShop" style="width: 300px; height: 300px; object-fit: cover; border-radius: 15px;">
-                        <!-- I added an image of pets -->
-                        <!-- width and height make it 300x300 pixels -->
-                        <!-- object-fit: cover crops without distortion -->
-                        <!-- border-radius: 15px creates rounded corners -->
                     </div>
                 </div>
                 
+                <!-- Company information -->
                 <div class="about-text">
-        
                     <h2>Welcome to Ailec's Store!</h2>
-                    
                     <p>Founded in 2020, we are passionate about providing the best care for pets. Named after our beloved dog Ailec, we started this journey to create a place where pets and their owners feel welcome and cared for.</p>
-
-                    
                     <p>Our mission is to offer quality products and professional services to keep your pets healthy and happy. Every product we sell and every service we offer is chosen with your pet's happiness in mind.</p>
-                
-                    
                     <p>Our experienced team is dedicated to exceptional customer service. Because to us, pets aren't just animals – they're family.</p>
                     
-                    
+                    <!-- Statistics -->
                     <div class="stats">
-                        
                         <div class="stat-box">
-                            <!-- First stat box -->
-                            
                             <h3>5000+</h3>
-                            <!-- Number displayed large -->
-                            
                             <p>Happy Customers</p>
-                            <!-- Description of the statistic -->
                         </div>
-                        
                         <div class="stat-box">
-                            <!-- Second stat box -->
-                            
                             <h3>1000+</h3>
-                            <!-- Number of products -->
-                            
                             <p>Products</p>
-                            <!-- Label -->
                         </div>
-                        
                         <div class="stat-box">
-                            <!-- Third stat box -->
-                            
                             <h3>50+</h3>
-                            <!-- Number of services -->
-                            
                             <p>Services</p>
-                            <!-- Label -->
                         </div>
                     </div>
                 </div>
@@ -156,47 +83,22 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <!-- Footer at bottom of page -->
-        
         <div class="container">
-            <!-- Container for centering -->
-            
             <p>&copy; 2026 AilecsPetShop | Phone: +34 236 345 234</p>
-            <!-- Copyright and phone -->
-            
             <p>Email: info@AilecsPetShop.com | Location: Barcelona</p>
-            <!-- Email and location -->
         </div>
     </footer>
 
+    <!-- Update cart counter -->
     <script>
-        // JavaScript for cart counter
-        
-        // I created this function to update the cart count
         function updateCartCount() {
-            // Function to display number of items in cart
-            
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            // I get cart data from local storage
-            // localStorage.getItem('cart') retrieves saved data
-            // JSON.parse converts text to array
-            // || [] uses empty array if nothing saved
-            
             const el = document.getElementById('cartCount');
-            // I find the counter element by ID
-            
             if(el) el.textContent = '(' + cart.length + ')';
-            // If element exists, I update the text
-            // cart.length counts items in array
-            // I format it with parentheses
         }
-        
-        // I call the function when page loads
         updateCartCount();
     </script>
 </body>
-<!-- Closing body tag -->
-
 </html>
-<!-- Closing HTML tag -->

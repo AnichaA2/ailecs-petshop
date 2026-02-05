@@ -1,149 +1,64 @@
 <!DOCTYPE html>
-<!-- I start with DOCTYPE to declare this is HTML5 -->
-
 <html lang="en">
-<!-- I set the language to English for the whole page -->
-
 <head>
-    <!-- Head section where I put all the page setup information -->
-    
     <meta charset="UTF-8">
-    <!-- I use UTF-8 encoding so special characters display correctly -->
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- I added this meta tag to make my website work on mobile phones -->
-    
     <title>Products - Ailec's PetShop</title>
-    <!-- This sets what appears in the browser tab -->
-    
     <link rel="stylesheet" href="style.css">
-    <!-- I link my external CSS file here to style the page -->
 </head>
-
 <body>
-    <!-- Body is where I put all the visible content -->
-    
     <header>
-        <!-- I created a header for the top navigation area -->
-        
         <nav class="container">
-            <!-- I use nav tag for the navigation menu and added container class to center it -->
-            
             <div class="logo">
-                <!-- This div holds my logo -->
-                
                 <span style="font-size: 2rem;">🐾</span>
-                <!-- I made the paw emoji bigger using inline CSS (2rem = twice the normal size) -->
-                
                 <div style="display: flex; flex-direction: column; line-height: 1;">
-                    <!-- I use flexbox here to stack the text vertically -->
-                    <!-- flex-direction: column makes items go top to bottom -->
-                    <!-- line-height: 1 removes extra spacing between lines -->
-                    
                     <span style="font-size: 1.8rem; font-weight: bold; letter-spacing: 2px;">AILEC'S</span>
-                    <!-- I styled the shop name to be big, bold, and spaced out -->
-                    
                     <span style="font-size: 1rem; font-weight: normal; letter-spacing: 3px;">PETSHOP</span>
-                    <!-- I made the subtitle smaller with more letter spacing -->
                 </div>
             </div>
             
             <ul class="nav-links">
-                <!-- I created an unordered list for my menu links -->
-                
                 <li><a href="index.html">Home</a></li>
-                <!-- Each list item has a link to different pages -->
-                
                 <li><a href="about.html">About</a></li>
-                <!-- This link goes to the about page -->
-                
                 <li><a href="products.html">Products</a></li>
-                <!-- This is the current page (products) -->
-                
                 <li><a href="services.html">Services</a></li>
-                <!-- Link to services page -->
-                
                 <li><a href="contact.html">Contact</a></li>
-                <!-- Link to contact form -->
             </ul>
             
             <div style="color: white; font-size: 1.2rem;">
-                <!-- I created this div for the shopping cart icon -->
-                <!-- I made it white to match the header and slightly bigger -->
-                
                 <a href="cart.html" style="color: white; text-decoration: none;">
-                    <!-- I linked this to the cart page and removed the underline -->
-                    
                     🛒 <span id="cartCount">(0)</span>
-                    <!-- I added a cart emoji and a counter -->
-                    <!-- The ID lets my JavaScript find this element to update the number -->
                 </a>
             </div>
         </nav>
     </header>
 
     <section class="page-header">
-        <!-- I created this section for the page title banner -->
-        
         <div class="container">
-            <!-- I use container to center the content -->
-            
             <h1>Our Products</h1>
-            <!-- Main heading for the page -->
-            
             <p>Browse our quality pet supplies</p>
-            <!-- Subtitle describing what users can find here -->
         </div>
     </section>
 
     <section class="products">
-        <!-- This section holds all my product cards -->
-        
         <div class="container">
-            <!-- Container to keep everything centered -->
-            
             <div class="products-grid">
-                <!-- I use products-grid class to display products in a grid layout -->
-                
-                <!-- FIRST PRODUCT: Dog Food -->
                 <div class="product-card">
-                    <!-- Each product is in its own card -->
-                    
                     <img src="images/download (3).jpg" alt="Dog Food" style="width: 100%; height: 200px; object-fit: cover;">
-                    <!-- I added the product image -->
-                    <!-- width: 100% makes it fill the card -->
-                    <!-- height: 200px keeps all images the same height -->
-                    <!-- object-fit: cover crops the image nicely without stretching -->
-                    
                     <h3>Dog Food</h3>
-                    <!-- Product name -->
-                    
                     <p>Premium quality</p>
-                    <!-- Short description of the product -->
-                    
                     <p class="price">€25.99</p>
-                    <!-- I use the price class to style prices in green -->
-                    
                     <button class="btn" onclick="addToCart('Dog Food', '25.99')">Add to Cart</button>
-                    <!-- I created a button that calls my addToCart function when clicked -->
-                    <!-- I pass the product name and price as parameters -->
                 </div>
 
-                <!-- SECOND PRODUCT: Cat Food -->
                 <div class="product-card">
-                    <!-- Same structure as first product -->
-                    
                     <img src="images/Moodboard Pet Shop.jpg" alt="Cat Food" style="width: 100%; height: 200px; object-fit: cover;">
-                    <!-- Cat food image -->
-                    
                     <h3>Cat Food</h3>
                     <p>Healthy choice</p>
                     <p class="price">€22.99</p>
                     <button class="btn" onclick="addToCart('Cat Food', '22.99')">Add to Cart</button>
-                    <!-- Button sends 'Cat Food' and price to my function -->
                 </div>
 
-                <!-- THIRD PRODUCT: Pet Toy -->
                 <div class="product-card">
                     <img src="images/download (2).jpg" alt="Pet Toy" style="width: 100%; height: 200px; object-fit: cover;">
                     <h3>Pet Toy</h3>
@@ -152,7 +67,6 @@
                     <button class="btn" onclick="addToCart('Pet Toy', '12.50')">Add to Cart</button>
                 </div>
 
-                <!-- FOURTH PRODUCT: Pet Collar -->
                 <div class="product-card">
                     <img src="images/download (4).jpg" alt="Pet Collar" style="width: 100%; height: 200px; object-fit: cover;">
                     <h3>Pet Collar</h3>
@@ -161,7 +75,6 @@
                     <button class="btn" onclick="addToCart('Pet Collar', '8.90')">Add to Cart</button>
                 </div>
 
-                <!-- FIFTH PRODUCT: Pet Bed -->
                 <div class="product-card">
                     <img src="images/download (6).jpg" alt="Pet Bed" style="width: 100%; height: 200px; object-fit: cover;">
                     <h3>Pet Bed</h3>
@@ -170,7 +83,6 @@
                     <button class="btn" onclick="addToCart('Pet Bed', '35.00')">Add to Cart</button>
                 </div>
 
-                <!-- SIXTH PRODUCT: Pet Shampoo -->
                 <div class="product-card">
                     <img src="images/Shampoo.jpg" alt="Pet Shampoo" style="width: 100%; height: 200px; object-fit: cover;">
                     <h3>Pet Shampoo</h3>
@@ -183,62 +95,26 @@
     </section>
 
     <footer>
-        <!-- Footer at the bottom of the page -->
-        
         <div class="container">
             <p>&copy; 2026 Ailec's PetShop | Phone: +34 236 345 234</p>
-            <!-- I added copyright and contact information -->
-            
             <p>Email: info@ailecspetshop.com | Location: Barcelona</p>
-            <!-- Email and location details -->
         </div>
     </footer>
 
     <script>
-        // This is where I wrote my JavaScript for the shopping cart
-        
-        // I created this function to update the cart counter
         function updateCartCount() {
-            // This function reads from local storage and updates the display
-            
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            // I get the cart data from local storage
-            // localStorage.getItem('cart') retrieves the saved data using the key 'cart'
-            // JSON.parse converts the text back into a JavaScript array
-            // If nothing is saved yet, I use || [] to create an empty array
-            
             document.getElementById('cartCount').textContent = '(' + cart.length + ')';
-            // I find the span with ID 'cartCount' in my HTML
-            // Then I change its text to show the number of items
-            // cart.length tells me how many items are in the array
-            // I add parentheses around the number for better display
         }
 
-        // I created this function to add products to the cart
         function addToCart(name, price) {
-            // This function receives the product name and price when a button is clicked
-            
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            // First, I get the current cart from local storage
-            
             cart.push({name: name, price: price});
-            // I add the new product to the cart array
-            // push() adds the item to the end of the array
-            // I store it as an object with name and price properties (key-value pairs)
-            
             localStorage.setItem('cart', JSON.stringify(cart));
-            // I save the updated cart back to local storage
-            // localStorage.setItem saves with the key 'cart'
-            // JSON.stringify converts the array to text so it can be stored
-            
             updateCartCount();
-            // I call my update function to refresh the counter display
-            
             alert('Added to cart!');
-            // I show a popup to confirm the product was added
         }
 
-        // I call this function when the page loads to show the current cart count
         updateCartCount();
     </script>
 </body>
