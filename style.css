@@ -68,7 +68,7 @@ nav {
 .features-grid, .products-grid {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* let items jump to the next line instead of breaking */
     justify-content: center;
     margin-top: 20px;
 }
@@ -201,7 +201,7 @@ footer {
 }
 
 .feature-icon {
-    animation: bounce 3s ease infinite;
+    animation: bounce 4s ease infinite;
 }
 
 img {
@@ -209,7 +209,7 @@ img {
     height: auto;
 }
 
-/* MOBILE: telas menores que 768px */
+/* Targets screens smaller than 768px (Tablets and Phones) */
 @media (max-width: 768px) {
     header {
         padding: 10px 5px;
@@ -271,7 +271,7 @@ img {
     }
 }
 
-/* TABLET E DESKTOP: telas maiores que 768px */
+/* DESKTOP: 768px */
 @media (min-width: 769px) {
     .about-content {
         flex-direction: row;

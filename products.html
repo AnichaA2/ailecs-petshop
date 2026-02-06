@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Ailec's PetShop</title>
@@ -17,7 +17,7 @@
                 </div>
             </div>
             
-            <ul class="nav-links">
+            <ul class="nav-links"> <!--ul we use for unordered list-->
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="products.html">Products</a></li>
@@ -102,19 +102,21 @@
     </footer>
 
     <script>
+        // Updates the cart number icon in the header
         function updateCartCount() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             document.getElementById('cartCount').textContent = '(' + cart.length + ')';
         }
-
+        // Adds a new item to the storage
         function addToCart(name, price) {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             cart.push({name: name, price: price});
             localStorage.setItem('cart', JSON.stringify(cart));
+            // Refresh counter and notify user
             updateCartCount();
             alert('Added to cart!');
         }
-
+        // Run on page load to show the count
         updateCartCount();
     </script>
 </body>
