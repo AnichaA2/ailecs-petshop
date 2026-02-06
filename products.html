@@ -107,7 +107,8 @@
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             document.getElementById('cartCount').textContent = '(' + cart.length + ')';
         }
-        // Adds a new item to the storage
+        // getitem is used to load the cart data  from local storage, if there is no data it returns to empty array
+        // setItem is used to save the cart data
         function addToCart(name, price) {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             cart.push({name: name, price: price});

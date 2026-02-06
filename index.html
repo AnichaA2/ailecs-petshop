@@ -90,6 +90,7 @@
             .then(d => {
                 document.getElementById('dogFact').textContent = d.data[0].attributes.body;
             });
+           
 
         function updateCartCount() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
